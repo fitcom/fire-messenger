@@ -3,15 +3,15 @@
 
         <ion-list>
             <label class="item item-input">
-                <span class="input-label">Username</span>
-                <input type="text">
+                <span class="input-label">Email</span>
+                <input type="email" ng-model="email" id="email">
             </label>
             <label class="item item-input">
                 <span class="input-label">Password</span>
-                <input type="password">
+                <input type="password" ng-model="password" id="password">
             </label>
-            <button class="button button-full button-calm">Login</button>
-            <button class="button button-full button-clear" ui-sref="signup" style="color: black">Forgot Password</button>
+            <button class="button button-full button-calm" ng-disabled="passOk != true" ng-click="login(email,password)">Login</button>
+            <button class="button button-full button-clear" ui-sref="forgot" style="color: black">Forgot Password</button>
         </ion-list>
 
 </ion-content>

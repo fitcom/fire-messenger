@@ -6,14 +6,23 @@ angular.module('fm.controllers')
 
 
         $scope.$watchGroup([function () {
-            return document.getElementById('username').value;
+            return document.getElementById('email').value;
         }, function () {
             return document.getElementById('password').value;
         }], function (newVal) {
 
-            $scope.userOk = newVal[0].length > 4;
+            var valid = new RegExp(/^(("[\w-+\s]+")|([\w-+]+(?:\.[\w-+]+)*)|("[\w-+\s]+")([\w-+]+(?:\.[\w-+]+)*))(@((?:[\w-+]+\.)*\w[\w-+]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][\d]\.|1[\d]{2}\.|[\d]{1,2}\.))((25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\.){2}(25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\]?$)/i);
 
-            $scope.passOk = newVal[1].length > 5;
+            $scope.emailOk = valid.test(newVal[0]);
+
+            $scope.passOk = newVal[1].length > 4;
+
+
+            if($scope.emailOk && $scope.passOk){
+                $scope.ready = true;
+            }else{
+                $scope.ready = false;
+            }
         });
 
         $scope.signup = function (email, password) {

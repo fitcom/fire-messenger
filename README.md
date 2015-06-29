@@ -1,2 +1,2 @@
 # Fire Messenger
-# Ionic Messenger app using firebase + parse
+# Ionic Messenger app using firebase

@@ -10,6 +10,11 @@ angular.module('fm', ['ionic', 'fm.controllers', 'fm.factories', 'firebase'])
                 url: '/signup',
                 templateUrl: 'templates/signup.html',
                 controller: 'SignupCtrl'
+            })
+            .state('setup', {
+                url: '/setup',
+                templateUrl: 'templates/setup.html',
+                controller: 'SetupCtrl'
             });
         $urlRouterProvider.otherwise('signup');
     })
