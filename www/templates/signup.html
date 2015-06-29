@@ -4,13 +4,13 @@
         <ion-list>
             <label class="item item-input">
                 <span class="input-label">Username</span>
-                <input type="text">
+                <input type="text" ng-model="username" id="username">
             </label>
             <label class="item item-input">
                 <span class="input-label">Password</span>
-                <input type="password">
+                <input type="password" ng-model="password" id="password">
             </label>
-            <button class="button button-full button-calm">Sign Up</button>
+            <button class="button button-full button-calm" ng-disabled="(userOk !== true) && (passOk !== true)" ng-click="signup(username,password)">Sign Up</button>
             <button class="button button-full button-clear" style="color: black" ui-sref="login">Already have an account ?</button>
         </ion-list>
 
