@@ -10,7 +10,7 @@
                 <span class="input-label">Password</span>
                 <input type="password" ng-model="password" id="password">
             </label>
-            <button class="button button-full button-calm" ng-disabled="passOk != true" ng-click="login(email,password)">Login</button>
+            <button class="button button-full button-calm" ng-disabled="!ready" ng-click="login(email,password)">Login</button>
             <button class="button button-full button-clear" ui-sref="forgot" style="color: black">Forgot Password</button>
         </ion-list>
 

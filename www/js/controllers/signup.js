@@ -18,11 +18,7 @@ angular.module('fm.controllers')
             $scope.passOk = newVal[1].length > 4;
 
 
-            if($scope.emailOk && $scope.passOk){
-                $scope.ready = true;
-            }else{
-                $scope.ready = false;
-            }
+            $scope.ready = !!($scope.emailOk && $scope.passOk);
         });
 
         $scope.signup = function (email, password) {

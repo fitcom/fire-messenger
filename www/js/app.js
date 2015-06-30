@@ -15,6 +15,38 @@ angular.module('fm', ['ionic', 'fm.controllers', 'fm.factories', 'firebase'])
                 url: '/setup',
                 templateUrl: 'templates/setup.html',
                 controller: 'SetupCtrl'
+            })
+            .state('tabs', {
+                url: '/tabs',
+                templateUrl: 'templates/tabs.html',
+                abstract:true
+            })
+            .state('tabs.chats', {
+                url: '/chats',
+                views:{
+                    'chats-tab':{
+                        templateUrl: 'templates/chats.html',
+                        controller:'ChatsCtrl'
+                    }
+                }
+            })
+            .state('tabs.contacts', {
+                url: '/contacts',
+                views:{
+                    'contacts-tab':{
+                        templateUrl: 'templates/contacts.html',
+                        controller:'ContactsCtrl'
+                    }
+                }
+            })
+            .state('tabs.settings', {
+                url: '/settings',
+                views:{
+                    'settings-tab':{
+                        templateUrl: 'templates/settings.html',
+                        controller:'SettingsCtrl'
+                    }
+                }
             });
         $urlRouterProvider.otherwise('signup');
     })
